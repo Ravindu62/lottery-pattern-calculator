@@ -2,9 +2,9 @@ const inputs = Array.from(document.querySelectorAll(".field input"));
 
 inputs.forEach((input, index) => {
     input.addEventListener("input", function () {
-        this.value = this.value.replace(/[^0-9]/g, "");
+        this.value = this.value.replace(/[^0-9]/g, "").slice(0, 2);
 
-        if (this.value.length === 1 && index < inputs.length - 1) {
+        if (this.value.length === 2 && index < inputs.length - 1) {
             inputs[index + 1].focus();
         }
     });
@@ -35,16 +35,17 @@ function checkPattern() {
     const diff2 = Math.abs(n2 - n3);
     const diff3 = Math.abs(n3 - n4);
     const total = diff1 + diff2 + diff3;
+    const lastNumber = total + n1;
 
     document.getElementById("d1").textContent = diff1;
     document.getElementById("d2").textContent = diff2;
     document.getElementById("d3").textContent = diff3;
-    document.getElementById("total").textContent = total;
+    document.getElementById("total").textContent = lastNumber;
 
     const result = document.getElementById("result");
     result.className = "result-box";
 
-    if (total === n4) {
+    if (lastNumber === n4) {
         result.classList.add("success");
         result.innerHTML = "🎉 Pattern found";
     } else {
