@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottery Pattern Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="card">
+            <div class="header">
+                <div class="badge">🎲</div>
+                <div>
+                    <h1>Lottery Pattern Checker</h1>
+                    <p>Enter four digits, compare the differences, and see whether the pattern matches.</p>
+                </div>
+            </div>
+
+            <div class="input-grid" role="group" aria-label="Lottery numbers">
+                <div class="field">
+                    <label for="n1">Number 1</label>
+                    <input type="text" id="n1" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                </div>
+                <div class="field">
+                    <label for="n2">Number 2</label>
+                    <input type="text" id="n2" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                </div>
+                <div class="field">
+                    <label for="n3">Number 3</label>
+                    <input type="text" id="n3" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                </div>
+                <div class="field">
+                    <label for="n4">Number 4</label>
+                    <input type="text" id="n4" maxlength="1" inputmode="numeric" pattern="[0-9]">
+                </div>
+            </div>
+
+            <div class="actions">
+                <button onclick="checkPattern()">Check Pattern</button>
+                <button class="secondary" onclick="clearInputs()">Clear</button>
+            </div>
+
+            <div class="results">
+                <div class="result-row">
+                    <span>Difference 1</span>
+                    <span id="d1">-</span>
+                </div>
+                <div class="result-row">
+                    <span>Difference 2</span>
+                    <span id="d2">-</span>
+                </div>
+                <div class="result-row">
+                    <span>Difference 3</span>
+                    <span id="d3">-</span>
+                </div>
+                <div class="result-row total">
+                    <span>Last Number Should Be</span>
+                    <span id="total">-</span>
+                </div>
+                <div id="result" class="result-box">Enter numbers to begin</div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
